@@ -34,3 +34,28 @@ cd my_project_name/
 php bin/console server:run
 
 ```
+
+### Recuperacion Frase Aleatoria
+
+Para realizar este apartado se ha creado el método con la ruta correspondiente:
+
+```
+
+/**
+ * @Route("/findRandDomSentece")
+ */
+public function findRandDomSenteceAction()
+{
+
+  $obj = json_decode(file_get_contents('https://api.chucknorris.io/jokes/random'), true);
+  return new Response($obj['value']);
+
+}
+
+```
+
+En **@Route**, se indica la ruta del navegador donde se va a ejecutar la acción, **findRandDomSenteceAction** es el nombre del método que se va a ejecutar, el método **json_decode** nos recuperará el código **json** a partir de la **url**, y recuperamos la frase del código **json** accediendo por el valor de la clave **$obj['value']**.
+
+La siguiete imagen muestra el resultado de la operación implementada:
+
+![img10](https://www.dropbox.com/s/dgnj4b6j3px4wdw/imgInicio.png?dl=1)

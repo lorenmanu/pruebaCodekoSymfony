@@ -56,10 +56,6 @@ public function findRandDomSenteceAction()
 
 En **@Route**, se indica la ruta del navegador donde se va a ejecutar la acción, **findRandDomSenteceAction** es el nombre del método que se va a ejecutar, el método **json_decode** nos recuperará el código **json** a partir de la **url**, y recuperamos la frase del código **json** accediendo por el valor de la clave **$obj['value']**.
 
-La siguiete imagen muestra el resultado de la operación implementada:
-
-![img1](https://www.dropbox.com/s/dgnj4b6j3px4wdw/imgInicio.png?dl=1)
-
 En el siguiente enlace se puede ver que hace la función [json_decode](https://api.symfony.com/3.4/Symfony/Component/Serializer/Encoder/JsonDecode.html).
 
 ### Creando página con comportamiento Ajax para actualizar la página cada 10s.
@@ -118,7 +114,3 @@ public function RandDomSenteceAction()
 
 
 ```
-
-La imagen que muestra el resultado final es la siguiente:
-
-![img2](https://www.dropbox.com/s/rqdkaq54kc05uqc/capturaFInal.png?dl=1)

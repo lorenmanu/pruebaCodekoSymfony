@@ -114,3 +114,24 @@ public function RandDomSenteceAction()
 
 
 ```
+
+### Ejecución de la aplicación.
+Al no tener base de datos ni otra funcionalidad, su ejecución es muy sencilla:
+
+```
+
+# Clonamos el repositorio
+git clone https://github.com/lorenmanu/pruebaCodekoSymfony.git
+#Nos movemos al repositorio
+cd pruebaCodekoSymfony
+# Instalamos la aplicación
+composer install
+# Ejecutamos el servidor
+php bin/console server:run
+# Introducimos la siguiente url en el navegador
+http://127.0.0.1:8000/RandDomSentece
+
+
+```
+
+Antes debemos tener instalado Symfony y Composer, tal y como se indica en el apartado **Inicalización del repositorio**.

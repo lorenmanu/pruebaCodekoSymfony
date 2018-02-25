@@ -21,6 +21,18 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/RandDomSentece")
+     */
+    public function RandDomSenteceAction()
+    {
+
+      return $this->render(
+          'default/index.html.twig'
+             );
+
+    }
+
+    /**
      * @Route("/findRandDomSentece")
      */
     public function findRandDomSenteceAction()

@@ -60,4 +60,65 @@ La siguiete imagen muestra el resultado de la operación implementada:
 
 ![img1](https://www.dropbox.com/s/dgnj4b6j3px4wdw/imgInicio.png?dl=1)
 
-En el siguiente enlace se puede ver que hace la función [json_decode](https://api.symfony.com/3.4/Symfony/Component/Serializer/Encoder/JsonDecode.html)
+En el siguiente enlace se puede ver que hace la función [json_decode](https://api.symfony.com/3.4/Symfony/Component/Serializer/Encoder/JsonDecode.html).
+
+### Creando página con comportamiento Ajax para actualizar la página cada 10s.
+
+Para realizar este apartado, he añadido una página con comportamiento Ajax:
+
+```
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    function getTextAJAX() {
+
+        //GUARDAMOS EN UNA VARIABLE EL RESULTADO DE LA CONSULTA AJAX
+
+        var text = $.ajax({
+
+            url: 'http://127.0.0.1:8000/findRandDomSentece', //ruta donde se recupera la frase aleatoria
+                dataType: 'text',//tipo de dato que se recibe
+                async: false     //asíncrono es false
+        }).responseText;
+
+        //indica el div que va a actualizar con el nuevo mensaje
+        document.getElementById("myText").innerHTML = "La frase recogida es: "+text;
+    }
+
+    //con esta función llamamos a getTextAjax cada 10s para que actualice
+    setInterval(getTextAJAX,10000);
+
+</script>
+
+<html>
+    <body onload="getTextAJAX();">
+
+    <div id='myText'></div>
+    </body>
+</html>
+
+```
+
+Y esta paǵina será cargada por el siguiente método definido en el **controller**.
+
+```
+
+/**
+ * @Route("/RandDomSentece")
+ */
+public function RandDomSenteceAction()
+{
+
+  return $this->render(
+      'default/index.html.twig'
+         );
+
+}
+
+
+```
+
+La imagen que muestra el resultado final es la siguiente:
+
+![img2](https://www.dropbox.com/s/rqdkaq54kc05uqc/capturaFInal.png?dl=1)

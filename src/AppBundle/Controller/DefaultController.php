@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -18,4 +19,16 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+
+    /**
+     * @Route("/findRandDomSentece")
+     */
+    public function findRandDomSenteceAction()
+    {
+
+      $obj = json_decode(file_get_contents('https://api.chucknorris.io/jokes/random'), true);
+      return new Response($obj['value']);
+
+    }
+
 }

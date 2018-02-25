@@ -58,4 +58,4 @@ En **@Route**, se indica la ruta del navegador donde se va a ejecutar la acción
 
 La siguiete imagen muestra el resultado de la operación implementada:
 
-![img10](https://www.dropbox.com/s/dgnj4b6j3px4wdw/imgInicio.png?dl=1)
+![img1](https://www.dropbox.com/s/dgnj4b6j3px4wdw/imgInicio.png?dl=1)
